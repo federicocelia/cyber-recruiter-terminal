@@ -53,7 +53,7 @@ No frameworks or external libraries.
 Clone the repository:
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/federicocelia/cyber-recruiter-terminal.git
 cd cyber-recruiter-terminal
 
 ```
