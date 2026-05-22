@@ -1,0 +1,109 @@
+:root {
+  --bg: #05070f;
+  --panel: #070917;
+  --shadow: rgba(180, 90, 255, 0.45);
+
+  --purple: #c084fc;
+  --pink: #ff00aa;
+  --green: #4affc3;
+  --cyan: #00eaff;
+  --gray: #9aa0aa;
+  --white: #eeeeee;
+}
+
+* {
+  box-sizing: border-box;
+  will-change: transform;
+}
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family:
+    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace;
+}
+
+.frame {
+  width: min(1200px, 92vw);
+  height: min(500px, 78vh);
+  background: var(--panel);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 0 40px var(--shadow);
+  overflow: hidden;
+  position: relative;
+}
+
+/* subtle scanlines */
+.frame::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.035),
+    rgba(255, 255, 255, 0.035) 1px,
+    rgba(0, 0, 0, 0) 4px
+  );
+  mix-blend-mode: overlay;
+  opacity: 0.18;
+}
+
+.code {
+  white-space: pre-wrap;
+  font-size: 13px;
+  line-height: 1.4;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.terminal {
+  white-space: pre;
+  font-size: 12px;
+  line-height: 1.25;
+  height: 100%;
+  overflow: auto;
+  padding-right: 6px;
+
+  /* hide scrollbar (Chrome, Edge, Safari) */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE */
+}
+
+.terminal::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+/* neon palette */
+.purple {
+  color: var(--purple);
+  text-shadow: 0 0 8px var(--purple);
+}
+.pink {
+  color: var(--pink);
+  text-shadow: 0 0 8px var(--pink);
+}
+.green {
+  color: var(--green);
+  text-shadow: 0 0 6px var(--green);
+}
+.cyan {
+  color: var(--cyan);
+  text-shadow: 0 0 6px var(--cyan);
+}
+.gray {
+  color: var(--gray);
+}
+.white {
+  color: var(--white);
+}
